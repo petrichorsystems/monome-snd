@@ -4,5 +4,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	rm -rf norns-linux
 	rm -rf tools
 	rm -rf backups
+	rm -rf ~/linux
 fi
 

@@ -36,7 +36,7 @@ directory (1.4GB+) and will take up diskspace, remove it first.
 $ ssh pi@192.168.#.#
 pi@raspberrypi:~ $ rm -rf ~/linux
 pi@raspberrypi:~ $ exit
-$ make clean_tools
+$ make clean-tools
 $ cd ..
 $ scp -r norns pi@192.168.#.#:.
 ```
