@@ -1,10 +1,8 @@
 #!/bin/bash
-cd norns-linux
-sudo make modules_install
 # in case we're cross-compiling, have
 #  to rebuild this binary due to it
 #  being built as 64bit for some reason
-cd firmware
+cd norns-linux/firmware
 rm ihex2fw
 gcc -o ihex2fw ihex2fw.c
 cd ..

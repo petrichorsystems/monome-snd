@@ -1,8 +1,6 @@
 all:
 	bash scripts/dependency_check_kernel.sh
-	cd norns-linux
-	make
-	cd ..
+	bash scripts/compile.sh
 
 modules:
 	bash scripts/dependency_check_kernel.sh
@@ -30,5 +28,5 @@ uninstall:
 clean:
 	bash scripts/clean.sh
 
-clean-tools:
+clean_tools:
 	rm -rf tools

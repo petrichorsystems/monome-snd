@@ -28,10 +28,10 @@ $ scp -r pi@192.168.#.#:linux rasbpi_source_backup/.
 $ git clone https://github.com/bonemurmurer/norns.git
 $ cd norns
 $ make cross-compile
-
 ```
-You'll need to copy the kernel sources over to the RasbPi. 'tools' is a large
-directory (1.4GB+) and will take up diskspace, remove it first.
+You'll need to copy the kernel sources over to the RasbPi. 'tools' contains
+the cross-compilation scripts.  It's a large directory (1.4GB+) and will take
+up disk space, remove it first.
 ```
 $ ssh pi@192.168.#.#
 pi@raspberrypi:~ $ rm -rf ~/linux
@@ -41,14 +41,12 @@ $ cd ..
 $ scp -r norns pi@192.168.#.#:.
 ```
 #### compiling remotely
-
 ```
 $ ssh pi@192.168.#.#
 pi@raspberrypi:~ $ rm -rf ~/linux
 pi@raspberrypi:~ $ git clone https://github.com/bonemurmurer/norns.git
 pi@raspberrypi:~ $ cd norns
 pi@raspberrypi:~ $ make
-
 ```
 
 ## Installing
@@ -56,6 +54,20 @@ pi@raspberrypi:~ $ make
 pi@raspberrypi:~ $ cd ~/norns
 pi@raspberrypi:~ $ make install
 pi@raspberrypi:~ $ sudo reboot
+```
+
+## Uninstalling
+After you're done using norns: make uninstall, make clean, and (if you backed
+them up) copy your original sources back to the RasbPi.
+```
+$ ssh pi@192.168.#.#
+pi@raspberrypi:~ $ cd norns
+pi@raspberrypi:~ $ make uninstall
+pi@raspberrypi:~ $ make clean
+pi@raspberrypi:~ $ cd ..
+pi@raspberrypi:~ $ rm -rf norns
+pi@raspberrypi:~ $ exit
+$ scp -r raspbi_source_backup/linux pi@192.168.#.#:.
 ```
 
 ## To-Do
