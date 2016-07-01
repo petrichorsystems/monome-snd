@@ -16,16 +16,12 @@ commands with cp if you've mounted the SD card on your local machine)
    2.8GB on the RasbPi
 * Compile remotely on the RasbPi, requires approximately 2.8GB on the RasbPi
 
-#### restore kernel source (optional)
-If you want the ability to completely restore your RasbPi configuration,
-backup the kernel source directory.  This requires approximately 2.8GB locally.
-```
-$ mkdir rasbpi_source_backup
-$ scp -r pi@192.168.#.#:linux rasbpi_source_backup/. 
-```
 #### cross-compiling on local system
 ```
-$ git clone https://github.com/bonemurmurer/norns.git
+$ sudo apt-get install git
+After this operation, 21.5 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+$ git clone https://github.com/bonemurmurer/monome-snd.git
 $ cd norns
 $ make cross-compile
 ```
@@ -34,8 +30,6 @@ the cross-compilation scripts.  It's a large directory (1.4GB+) and will take
 up disk space, remove it first.
 ```
 $ ssh pi@192.168.#.#
-pi@raspberrypi:~ $ rm -rf ~/linux
-pi@raspberrypi:~ $ exit
 $ make clean-tools
 $ cd ..
 $ scp -r norns pi@192.168.#.#:.
@@ -43,8 +37,8 @@ $ scp -r norns pi@192.168.#.#:.
 #### compiling remotely
 ```
 $ ssh pi@192.168.#.#
-pi@raspberrypi:~ $ rm -rf ~/linux
-pi@raspberrypi:~ $ git clone https://github.com/bonemurmurer/norns.git
+pi@raspberrypi:~ $ sudo apt-get install bc
+pi@raspberrypi:~ $ git clone https://github.com/bonemurmurer/monome-snd.git
 pi@raspberrypi:~ $ cd norns
 pi@raspberrypi:~ $ make
 ```

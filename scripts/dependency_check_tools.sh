@@ -1,4 +1,4 @@
 #!/bin/bash
 if [ ! -d "tools" ]; then
-    git clone https://github.com/raspberrypi/tools.git
+    git clone --depth=1 https://github.com/raspberrypi/tools.git
 fi
