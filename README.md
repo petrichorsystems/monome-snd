@@ -1,11 +1,11 @@
-# norns
+# monome-snd
 
 monome raspberry-pi hat
 
 ## Directories
 
 - `scripts`: bash scripts for easy staging and compilation of code
-- `configs`: norns-specific device tree overlay and linux kernel configuration
+- `configs`: monome-snd-specific device tree overlay and linux kernel configuration
 
 ## Building
 The building and installing process could be broken up into smaller
@@ -22,7 +22,7 @@ $ sudo apt-get install git
 After this operation, 21.5 MB of additional disk space will be used.
 Do you want to continue? [Y/n] y
 $ git clone https://github.com/bonemurmurer/monome-snd.git
-$ cd norns
+$ cd monome-snd
 $ make cross-compile
 ```
 You'll need to copy the kernel sources over to the RasbPi. 'tools' contains
@@ -32,34 +32,34 @@ up disk space, remove it first.
 $ ssh pi@192.168.#.#
 $ make clean-tools
 $ cd ..
-$ scp -r norns pi@192.168.#.#:.
+$ scp -r monome-snd pi@192.168.#.#:.
 ```
 #### compiling remotely
 ```
 $ ssh pi@192.168.#.#
 pi@raspberrypi:~ $ sudo apt-get install bc
 pi@raspberrypi:~ $ git clone https://github.com/bonemurmurer/monome-snd.git
-pi@raspberrypi:~ $ cd norns
+pi@raspberrypi:~ $ cd monome-snd
 pi@raspberrypi:~ $ make
 ```
 
 ## Installing
 ```
-pi@raspberrypi:~ $ cd ~/norns
+pi@raspberrypi:~ $ cd ~/monome-snd
 pi@raspberrypi:~ $ make install
 pi@raspberrypi:~ $ sudo reboot
 ```
 
 ## Uninstalling
-After you're done using norns: make uninstall, make clean, and (if you backed
+After you're done using monome-snd: make uninstall, make clean, and (if you backed
 them up) copy your original sources back to the RasbPi.
 ```
 $ ssh pi@192.168.#.#
-pi@raspberrypi:~ $ cd norns
+pi@raspberrypi:~ $ cd monome-snd
 pi@raspberrypi:~ $ make uninstall
 pi@raspberrypi:~ $ make clean
 pi@raspberrypi:~ $ cd ..
-pi@raspberrypi:~ $ rm -rf norns
+pi@raspberrypi:~ $ rm -rf monome-snd
 pi@raspberrypi:~ $ exit
 $ scp -r raspbi_source_backup/linux pi@192.168.#.#:.
 ```
@@ -67,5 +67,5 @@ $ scp -r raspbi_source_backup/linux pi@192.168.#.#:.
 ## To-Do
 * Merge patch to cs4270 codec driver to upstream Linux kernel
 * Submit RasbPi-specific code and configuration to Raspbian distribution
-* Update Norns build process to work with previous kernel/Raspbian tasks
-* Remove norns-linux repository (https://github.com/bonemurmurer/norns-linux)
+* Update monome-snd build process to work with previous kernel/Raspbian tasks
+* Remove monome-snd-linux repository (https://github.com/bonemurmurer/monome-snd-linux)

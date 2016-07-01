@@ -55,5 +55,5 @@ dtparam=spi=on
 # Enable audio (loads snd_bcm2835)
 #dtparam=audio=on
 
-# Enable Monome Norns (loads snd_soc_monome_norns)
-dtoverlay=monome-norns
+# Enable monome-snd (loads snd_soc_monome)
+dtoverlay=monome

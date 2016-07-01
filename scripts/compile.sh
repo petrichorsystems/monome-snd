@@ -1,4 +1,4 @@
 #!/bin/bash
-cd norns-linux
+cd monome-snd-linux
 make
 cd ..

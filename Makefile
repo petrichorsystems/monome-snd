@@ -4,7 +4,7 @@ all:
 
 modules:
 	bash scripts/dependency_check_kernel.sh
-	cd norns-linux
+	cd monome-snd-linux
 	make modules
 	cd ..
 
