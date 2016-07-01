@@ -28,5 +28,5 @@ uninstall:
 clean:
 	bash scripts/clean.sh
 
-clean_tools:
+clean-tools:
 	rm -rf tools

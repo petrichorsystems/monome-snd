@@ -18,9 +18,6 @@ commands with cp if you've mounted the SD card on your local machine)
 
 #### cross-compiling on local system
 ```
-$ sudo apt-get install git
-After this operation, 21.5 MB of additional disk space will be used.
-Do you want to continue? [Y/n] y
 $ git clone https://github.com/bonemurmurer/monome-snd.git
 $ cd monome-snd
 $ make cross-compile
@@ -37,6 +34,9 @@ $ scp -r monome-snd pi@192.168.#.#:.
 #### compiling remotely
 ```
 $ ssh pi@192.168.#.#
+pi@raspberrypi:~ $ sudo apt-get install git
+After this operation, 21.5 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
 pi@raspberrypi:~ $ sudo apt-get install bc
 pi@raspberrypi:~ $ git clone https://github.com/bonemurmurer/monome-snd.git
 pi@raspberrypi:~ $ cd monome-snd
