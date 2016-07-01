@@ -58,7 +58,6 @@ pi@raspberrypi:~ $ make clean
 pi@raspberrypi:~ $ cd ..
 pi@raspberrypi:~ $ rm -rf monome-snd
 pi@raspberrypi:~ $ exit
-$ scp -r raspbi_source_backup/linux pi@192.168.#.#:.
 ```
 
 ## To-Do
