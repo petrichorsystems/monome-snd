@@ -12,9 +12,9 @@ The building and installing process could be broken up into smaller
 steps and made faster, but for simplicity there are two scripted
 methods to build the driver.  (Also, you can replace any of the scp
 commands with cp if you've mounted the SD card on your local machine)
-* Cross-compile on a local system, requires approximately 4.3GB locally and
-   2.8GB on the RasbPi
-* Compile remotely on the RasbPi, requires approximately 2.8GB on the RasbPi
+* Cross-compile on a local system, requires approximately 2.9GB locally and
+   1.4GB on the RasbPi
+* Compile remotely on the RasbPi, requires approximately 1.4GB on the RasbPi
 
 #### cross-compiling on local system
 ```
