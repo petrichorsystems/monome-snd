@@ -55,5 +55,8 @@ dtparam=spi=on
 # Enable audio (loads snd_bcm2835)
 #dtparam=audio=on
 
+# Enable i2s-mmap functionality
+dtoverlay=i2s-mmap
+
 # Enable monome-snd (loads snd_soc_monome)
 dtoverlay=monome
