@@ -1,4 +1,4 @@
 #!/bin/bash
-cd monome-snd-linux
+cd linux
 make
 cd ..

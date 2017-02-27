@@ -6,6 +6,7 @@ monome raspberry-pi hat
 
 - `scripts`: bash scripts for easy staging and compilation of code
 - `configs`: monome-snd-specific device tree overlay and linux kernel configuration
+-  `kernel`: changes to the kernel, specific for this driver
 
 ## Building
 The building and installing process could be broken up into smaller
@@ -18,7 +19,7 @@ commands with cp if you've mounted the SD card on your local machine)
 
 #### cross-compiling on local system
 ```
-$ git clone https://github.com/bonemurmurer/monome-snd.git
+$ git clone https://github.com/petrichorsystems/monome-snd.git
 $ cd monome-snd
 $ make cross-compile
 ```
@@ -35,7 +36,7 @@ $ scp -r monome-snd pi@192.168.#.#:.
 $ ssh pi@192.168.#.#
 pi@raspberrypi:~ $ sudo apt-get install git
 pi@raspberrypi:~ $ sudo apt-get install bc
-pi@raspberrypi:~ $ git clone https://github.com/bonemurmurer/monome-snd.git
+pi@raspberrypi:~ $ git clone https://github.com/petrichorsystems/monome-snd.git
 pi@raspberrypi:~ $ cd monome-snd
 pi@raspberrypi:~ $ make
 ```
@@ -61,7 +62,5 @@ pi@raspberrypi:~ $ exit
 ```
 
 ## To-Do
-* Merge patch to cs4270 codec driver to upstream Linux kernel
 * Submit RasbPi-specific code and configuration to Raspbian distribution
-* Update monome-snd build process to work with previous kernel/Raspbian tasks
-* Remove monome-snd-linux repository (https://github.com/bonemurmurer/monome-snd-linux)
+* Update monome-snd build process (to work with above)

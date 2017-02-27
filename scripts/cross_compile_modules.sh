@@ -1,3 +1,5 @@
 #!/bin/bash
-cd monome-snd-linux;
-make -j 6 ARCH=arm CROSS_COMPILE=../tools/arm-bcm2708/arm-bcm2708-linux-gnueabi/bin/arm-bcm2708-linux-gnueabi- modules
+cd linux;
+make -j 5 ARCH=arm CROSS_COMPILE=../tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- modules
+make -j 5 ARCH=arm CROSS_COMPILE=../tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- dtbs
+cd ..
