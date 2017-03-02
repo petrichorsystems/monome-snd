@@ -5,7 +5,7 @@ all:
 modules:
 	bash scripts/dependency_check_kernel.sh
 	cd linux
-	make modules
+	make -j4 modules
 	cd ..
 
 cross-compile:

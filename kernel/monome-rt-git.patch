@@ -1,0 +1,64 @@
+diff --git a/arch/arm/boot/dts/overlays/Makefile b/arch/arm/boot/dts/overlays/Makefile
+index b13e340..9656878 100644
+--- a/arch/arm/boot/dts/overlays/Makefile
++++ b/arch/arm/boot/dts/overlays/Makefile
+@@ -59,6 +59,7 @@ dtbo-$(RPI_DT_OVERLAYS) += mcp2515-can0.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += mcp2515-can1.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += mcp3008.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += mmc.dtbo
++dtbo-$(RPI_DT_OVERLAYS) += monome.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += mz61581.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += pi3-act-led.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += pi3-disable-bt.dtbo
+diff --git a/arch/arm/boot/dts/overlays/README b/arch/arm/boot/dts/overlays/README
+index 72601f8..46609c8 100644
+--- a/arch/arm/boot/dts/overlays/README
++++ b/arch/arm/boot/dts/overlays/README
+@@ -752,6 +752,12 @@ Params: overclock_50            Clock (in MHz) to use when the MMC framework
+                                 requests 50MHz
+ 
+ 
++Name:   monome
++Info:   Configures the Monome audio card
++Load:   dtoverlay=monome
++Params: <None>
++
++
+ Name:   mz61581
+ Info:   MZ61581 display by Tontec
+ Load:   dtoverlay=mz61581,<param>=<val>
+diff --git a/sound/soc/bcm/Kconfig b/sound/soc/bcm/Kconfig
+index 8382695..4ea3850 100644
+--- a/sound/soc/bcm/Kconfig
++++ b/sound/soc/bcm/Kconfig
+@@ -122,6 +122,13 @@ config SND_BCM2708_SOC_ALLO_PIANO_DAC
+ 	help
+ 	  Say Y or M if you want to add support for Allo Piano DAC.
+ 
++config SND_BCM2708_SOC_MONOME
++       tristate "Support for monome-snd"
++       depends on SND_BCM2708_SOC_I2S || SND_BCM2835_SOC_I2S
++       select SND_SOC_CS4270
++       help
++         Say Y or M if you want to add supprot for Monome soundcard.
++
+ config SND_PISOUND
+ 	tristate "Support for Blokas Labs pisound"
+ 	depends on SND_BCM2708_SOC_I2S || SND_BCM2835_SOC_I2S
+diff --git a/sound/soc/bcm/Makefile b/sound/soc/bcm/Makefile
+index 94b79ed..05c1bc4 100644
+--- a/sound/soc/bcm/Makefile
++++ b/sound/soc/bcm/Makefile
+@@ -21,6 +21,7 @@ snd-soc-digidac1-soundcard-objs := digidac1-soundcard.o
+ snd-soc-dionaudio-loco-objs := dionaudio_loco.o
+ snd-soc-allo-piano-dac-objs := allo-piano-dac.o
+ snd-soc-pisound-objs := pisound.o
++snd-soc-monome-objs := monome.o
+ 
+ obj-$(CONFIG_SND_BCM2708_SOC_ADAU1977_ADC) += snd-soc-adau1977-adc.o
+ obj-$(CONFIG_SND_BCM2708_SOC_HIFIBERRY_DAC) += snd-soc-hifiberry-dac.o
+@@ -39,3 +40,4 @@ obj-$(CONFIG_SND_DIGIDAC1_SOUNDCARD) += snd-soc-digidac1-soundcard.o
+ obj-$(CONFIG_SND_BCM2708_SOC_DIONAUDIO_LOCO) += snd-soc-dionaudio-loco.o
+ obj-$(CONFIG_SND_BCM2708_SOC_ALLO_PIANO_DAC) += snd-soc-allo-piano-dac.o
+ obj-$(CONFIG_SND_PISOUND) += snd-soc-pisound.o
++obj-$(CONFIG_SND_BCM2708_SOC_MONOME) += snd-soc-monome.o

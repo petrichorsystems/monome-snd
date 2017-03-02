@@ -1,3 +1,9 @@
 #!/bin/bash
 cd linux;
-make -j 4 ARCH=arm CROSS_COMPILE=../tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- zImage
+
+# create default configuration for this kernel version
+KERNEL=kernel7
+make ARCH=arm CROSS_COMPILE=../tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- bcm2709_defconfig    
+echo "CONFIG_SND_BCM2708_SOC_MONOME=m" >> .config
+make ARCH=arm CROSS_COMPILE=../tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- zImage
+cd ..
