@@ -1,0 +1,15 @@
+--- arch/arm/boot/dts/overlays/README	2017-03-29 23:38:09.451022380 -0700
++++ arch/arm/boot/dts/overlays/README.new	2017-03-30 17:50:54.837181811 -0700
+@@ -784,6 +784,12 @@
+                                 requests 50MHz
+ 
+ 
++Name:   monome
++Info:   Configures the Monome audio card
++Load:   dtoverlay=monome
++Params: <None>
++
++
+ Name:   mz61581
+ Info:   MZ61581 display by Tontec
+ Load:   dtoverlay=mz61581,<param>=<val>

@@ -1,11 +1,10 @@
 all:
 	bash scripts/dependency_check_kernel.sh
 	bash scripts/compile.sh
-
 modules:
 	bash scripts/dependency_check_kernel.sh
 	cd linux
-	make -j4 modules
+	make -j4 ARCH=arm modules dtbs
 	cd ..
 
 cross-compile:
