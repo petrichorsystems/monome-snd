@@ -27,5 +27,6 @@ uninstall:
 clean:
 	bash scripts/clean.sh
 
-clean-tools:
+stage-remote-copy:
 	rm -rf tools
+	rm -rf linux/.git
