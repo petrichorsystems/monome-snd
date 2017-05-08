@@ -29,4 +29,4 @@ clean:
 
 stage-remote-copy:
 	rm -rf tools
-	rm -rf linux/.git
+	rm -rf monome-raspbian/.git
