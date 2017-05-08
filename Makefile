@@ -3,7 +3,7 @@ all:
 	bash scripts/compile.sh
 modules:
 	bash scripts/dependency_check_kernel.sh
-	cd linux
+	cd monome-raspbian
 	make -j4 ARCH=arm modules dtbs
 	cd ..
 

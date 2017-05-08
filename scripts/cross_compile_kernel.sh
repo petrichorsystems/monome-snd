@@ -1,5 +1,5 @@
 #!/bin/bash
-cd linux;
+cd monome-raspbian;
 
 # create default configuration for this kernel version
 KERNEL=kernel7
