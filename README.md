@@ -24,8 +24,8 @@ $ cd monome-snd
 $ make cross-compile
 ```
 You'll need to copy the kernel sources over to the RasbPi. 'tools' contains
-the cross-compilation scripts and 'linux/.git' contains branch/commit data.
-They are large directories (tools - 1.4GB+, linux/.git - 1.8GB+) and will
+the cross-compilation scripts and 'monome-raspbian/.git' contains branch/commit data.
+They are large directories (tools - 1.4GB+, monome-raspbian/.git - 1.8GB+) and will
 drastically increase remote copy time so remove them first
 ```
 $ make stage-remote-copy
