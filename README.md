@@ -8,6 +8,9 @@ monome raspberry-pi hat
 - `configs`: monome-snd-specific device tree overlay and linux kernel configuration
 -  `kernel`: changes to the kernel, specific for this driver
 
+## Status
+[![Build Status](https://travis-ci.org/petrichorsystems/monome-snd.svg?branch=master)](https://travis-ci.org/petrichorsystems/monome-snd)
+
 ## Building
 The building and installing process could be broken up into smaller
 steps and made faster, but for simplicity there are two scripted
