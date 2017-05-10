@@ -4,7 +4,7 @@ dist: trusty
 
 before_install:
     - sudo apt-get update
-    - sudo apt-get install qemu-system-arm wget sshpass gcc-arm-linux-gnueabi
+    - sudo apt-get install qemu-system-arm wget sshpass
     
 install:
     - wget "http://monome.s3.amazonaws.com/test_images/current/2017-04-10-raspbian-jessie-lite-3_8GB.img"
@@ -14,8 +14,9 @@ before_script:
     - ./test/wait-for-ssh.sh
     
 script:
-    - sshpass -p raspberry ssh localhost -o StrictHostKeyChecking=no -p 10022 -l pi
-    - sudo apt-get install git bc
-    - git clone https://github.com/petrichorsystems/monome-snd.git
-    - cd monome-snd
-    - make
+    - sshpass -p raspberry ssh localhost -o StrictHostKeyChecking=no -p 10022 -l pi " \
+    sudo apt-get install git bc \
+    git clone https://github.com/petrichorsystems/monome-snd.git \
+    cd monome-snd \
+    make \
+    "
