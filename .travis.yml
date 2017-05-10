@@ -9,7 +9,7 @@ install:
     - ls
     
 before_script:
-    -ls
+    - ls
     
 script:
-    -ls
+    - ls
