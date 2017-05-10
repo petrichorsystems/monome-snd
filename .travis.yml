@@ -14,5 +14,8 @@ before_script:
     - ./test/wait-for-ssh.sh
     
 script:
-    - ls
-    - sshpass -p raspberry ssh localhost -o StrictHostKeyChecking=no -p 10022    -l pi "cat /etc/os-release"
+    - sshpass -p raspberry ssh localhost -o StrictHostKeyChecking=no -p 10022
+    - sudo apt-get install git bc
+    - git clone https://github.com/petrichorsystems/monome-snd.git
+    - cd monome-snd
+    - make
