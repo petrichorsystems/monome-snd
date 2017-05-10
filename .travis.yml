@@ -4,7 +4,7 @@ dist: trusty
 
 before_install:
     - sudo apt-get update
-    - sudo apt-get install qemu-system-arm wget sshpass
+    - sudo apt-get install qemu-system-arm wget sshpass gcc-arm-linux-gnueabi
     
 install:
     - wget "http://monome.s3.amazonaws.com/test_images/current/2017-04-10-raspbian-jessie-lite-3_8GB.img"
