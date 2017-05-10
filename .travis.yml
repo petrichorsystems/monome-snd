@@ -1,0 +1,15 @@
+language: generic
+sudo: true
+dist: trusty
+
+before_install:
+    - ls
+    
+install:
+    - ls
+    
+before_script:
+    -ls
+    
+script:
+    -ls
