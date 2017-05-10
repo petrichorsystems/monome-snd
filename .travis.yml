@@ -14,4 +14,4 @@ before_script:
     - ./test/wait-for-ssh.sh
     
 script:
-    - sshpass -p raspberry ssh localhost -o StrictHostKeyChecking=no -p 10022 -l pi "sudo ln -s /usr/bin/arm-linux-gnueabihf-gcc /usr/bin/arm-linux-gcc; sudo ln -s /usr/bin/arm-linux-gnueabihf-ld /usr/bin/arm-linux-ld; sudo ln -s /usr/bin/arm-linux-gnueabihf-objdump /usr/bin/bin/arm-linux-objdump ; sudo apt-get install -y git bc ; git clone https://github.com/petrichorsystems/monome-snd.git ;  cd monome-snd ; make ; exit $?"
+    - sshpass -p raspberry ssh localhost -o StrictHostKeyChecking=no -p 10022 -l pi "sudo ln -s /usr/bin/arm-linux-gnueabihf-gcc /usr/bin/arm-linux-gcc; sudo ln -s /usr/bin/arm-linux-gnueabihf-ld /usr/bin/arm-linux-ld; sudo ln -s /usr/bin/arm-linux-gnueabihf-objdump /usr/bin/bin/arm-linux-objdump ; sudo ln -s /usr/bin/arm-linux-gnueabihf-objcopy /usr/bin/bin/arm-linux-objcopy ; sudo apt-get install -y git bc ; git clone https://github.com/petrichorsystems/monome-snd.git ;  cd monome-snd ; make ; exit $?"
