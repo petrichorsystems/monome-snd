@@ -10,7 +10,7 @@ install:
     - wget "http://monome.s3.amazonaws.com/test_images/current/2017-04-10-raspbian-jessie-lite-3_8GB.img"
     
 before_script:
-    - qemu-system-arm -kernel test/kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -net user,hostfwd=tcp::10022-:22 -net nic -display none -hda 2015-11-21-raspbian-jessie-lite-3_8GB.img &
+    - qemu-system-arm -kernel test/kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -net user,hostfwd=tcp::10022-:22 -net nic -display none -hda 2017-04-10-raspbian-jessie-lite-3_8GB.img &
     - ./test/wait-for-ssh.sh
     
 script:
