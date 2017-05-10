@@ -3,7 +3,8 @@ sudo: true
 dist: trusty
 
 before_install:
-    - ls
+    - sudo apt-get update
+    - sudo apt-get install qemu-system-arm wget sshpass
     
 install:
     - ls
@@ -12,4 +13,4 @@ before_script:
     - ls
     
 script:
-    - ls
+    - pwd
