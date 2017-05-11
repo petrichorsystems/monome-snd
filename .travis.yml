@@ -16,4 +16,5 @@ script:
     - sudo ln -s /usr/bin/arm-linux-gnueabihf-objdump /usr/bin/arm-linux-objdump
     - sudo ln -s /usr/bin/arm-linux-gnueabihf-objcopy /usr/bin/arm-linux-objcopy
     - sudo ln -s /usr/bin/arm-linux-gnueabihf-ar /usr/bin/arm-linux-ar
+    - sudo ln -s /usr/bin/arm-linux-gnueabihf-ar /usr/bin/arm-linux-nm
     - make
