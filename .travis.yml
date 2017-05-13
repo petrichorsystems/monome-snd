@@ -18,7 +18,7 @@ script:
     - sudo ln -s /usr/bin/arm-linux-gnueabihf-ar /usr/bin/arm-linux-ar
     - sudo ln -s /usr/bin/arm-linux-gnueabihf-nm /usr/bin/arm-linux-nm
     - sudo ln -s /usr/bin/arm-linux-gnueabihf-size /usr/bin/arm-linux-size
-    - make zImage
+    - make
     - make modules dtbs
     - ./test/lookup_monome-soc-monome.sh
     - ./test/lookup_monome-dtbo.sh
